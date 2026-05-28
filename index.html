@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev.livre — Aprenda Programação de Graça e Sem Complicação</title>
+    <meta name="description" content="Aprenda programação do zero, com cursos e vídeos 100% gratuitos. Focado em quem está começando e estuda pelo celular.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Decorative Banner -->
+    <div class="top-gingham-banner"></div>
+
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span class="logo-dot"></span>
+                Dev.livre
+            </a>
+            <div class="header-badge">comunidade</div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="card hero-card">
+                <!-- Cute SVG Sticker -->
+                <div class="sticker sticker-free animate-float">
+                    <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="#546745" stroke="#4E351E" stroke-width="4"/>
+                        <path d="M30,50 Q50,20 70,50" stroke="#F7F6E3" stroke-width="3" fill="none"/>
+                        <text x="50" y="58" fill="#F7F6E3" font-family="'Fraunces', serif" font-weight="800" font-size="16" text-anchor="middle">100% GRÁTIS</text>
+                    </svg>
+                </div>
+                
+                <h1 class="hero-title">Aprender tecnologia <br><span class="highlight-text">é para todo mundo.</span></h1>
+                <p class="hero-description">
+                    Sem enrolação e sem precisar de um computador caro. Descubra como começar a programar de graça, direto do seu celular, com trilhas organizadas e materiais que cabem no seu plano de dados.
+                </p>
+                <div class="hero-actions">
+                    <a href="#trilha" class="btn btn-primary">Começar a Trilha</a>
+                    <a href="#playground" class="btn btn-secondary">Testar um Código</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats / Badges strip -->
+        <section class="info-strip">
+            <div class="strip-item">
+                <span class="strip-icon">📱</span>
+                <span class="strip-text">Focado em celular</span>
+            </div>
+            <div class="strip-item">
+                <span class="strip-icon">🎬</span>
+                <span class="strip-text">Melhores canais grátis</span>
+            </div>
+            <div class="strip-item">
+                <span class="strip-icon">🛠️</span>
+                <span class="strip-text">Pratique sem instalar nada</span>
+            </div>
+        </section>
+
+        <!-- Learning Path (Trilha) -->
+        <section id="trilha" class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Sua Trilha de Aprendizado</h2>
+                <p class="section-subtitle">Um caminho passo a passo feito para quem nunca viu código na vida.</p>
+            </div>
+
+            <!-- Progress tracker -->
+            <div class="progress-container card">
+                <div class="progress-info">
+                    <span>Seu Progresso:</span>
+                    <span id="progress-percent" class="progress-percent">0%</span>
+                </div>
+                <div class="progress-bar-wrapper">
+                    <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
+                </div>
+                <p class="progress-tips" id="progress-tips">Clique nos passos abaixo para ler e marcar como concluídos!</p>
+            </div>
+
+            <!-- Steps Roadmap (Vertical chain) -->
+            <div class="roadmap-chain">
+                <!-- Step 1 -->
+                <div class="roadmap-step" data-step="1">
+                    <div class="step-marker-container">
+                        <button class="step-check" aria-label="Marcar passo 1 como concluído" onclick="toggleStep(1)"></button>
+                        <div class="step-number">1</div>
+                    </div>
+                    <div class="card step-card" onclick="expandStep(1)">
+                        <div class="step-card-header">
+                            <span class="step-tag">O Começo</span>
+                            <h3>O que é Programação?</h3>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="step-card-content">
+                            <p>Programar é apenas dar instruções para o computador (ou celular) resolver problemas para nós. É como escrever uma receita de bolo: você diz os ingredientes e o passo a passo que o aparelho deve seguir.</p>
+                            <div class="step-reco">
+                                <strong>Recomendação básica:</strong>
+                                <a href="https://www.youtube.com/watch?v=8mei6uVttho" target="_blank" class="reco-link">
+                                    📺 O que é um Algoritmo? (Vídeo - Curso em Vídeo) ↗
+                                </a>
+                            </div>
+                            <button class="btn btn-small btn-complete" onclick="event.stopPropagation(); toggleStep(1)">Marcar como Lido</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="roadmap-step" data-step="2">
+                    <div class="step-marker-container">
+                        <button class="step-check" aria-label="Marcar passo 2 como concluído" onclick="toggleStep(2)"></button>
+                        <div class="step-number">2</div>
+                    </div>
+                    <div class="card step-card" onclick="expandStep(2)">
+                        <div class="step-card-header">
+                            <span class="step-tag">Lógica</span>
+                            <h3>Lógica de Programação</h3>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="step-card-content">
+                            <p>Antes de escrever códigos complicados, precisamos aprender a organizar nossos pensamentos de forma que um computador entenda. É aqui que você aprende comandos como "se" (if) e "enquanto" (while).</p>
+                            <div class="step-reco">
+                                <strong>Para começar forte:</strong>
+                                <a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dmSj0MxRwH91eJvjV2T9Q3-" target="_blank" class="reco-link">
+                                    📺 Curso Grátis de Algoritmos (Vídeo - Guanabara) ↗
+                                </a>
+                            </div>
+                            <button class="btn btn-small btn-complete" onclick="event.stopPropagation(); toggleStep(2)">Marcar como Lido</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="roadmap-step" data-step="3">
+                    <div class="step-marker-container">
+                        <button class="step-check" aria-label="Marcar passo 3 como concluído" onclick="toggleStep(3)"></button>
+                        <div class="step-number">3</div>
+                    </div>
+                    <div class="card step-card" onclick="expandStep(3)">
+                        <div class="step-card-header">
+                            <span class="step-tag">Web Básico</span>
+                            <h3>HTML e CSS: A Cara da Web</h3>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="step-card-content">
+                            <p>O HTML cria a estrutura do site (os textos, caixas e botões), e o CSS deixa tudo bonito (cores, fontes e espacamento). É como construir uma casa: HTML são os tijolos e CSS é a pintura.</p>
+                            <div class="step-reco">
+                                <strong>Onde aprender de verdade:</strong>
+                                <a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n" target="_blank" class="reco-link">
+                                    📺 HTML5 e CSS3 para Iniciantes (Vídeo - Guanabara) ↗
+                                </a>
+                            </div>
+                            <button class="btn btn-small btn-complete" onclick="event.stopPropagation(); toggleStep(3)">Marcar como Lido</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="roadmap-step" data-step="4">
+                    <div class="step-marker-container">
+                        <button class="step-check" aria-label="Marcar passo 4 como concluído" onclick="toggleStep(4)"></button>
+                        <div class="step-number">4</div>
+                    </div>
+                    <div class="card step-card" onclick="expandStep(4)">
+                        <div class="step-card-header">
+                            <span class="step-tag">Dinamismo</span>
+                            <h3>JavaScript: Dando Vida ao Site</h3>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="step-card-content">
+                            <p>O JavaScript faz as coisas acontecerem de verdade: calcular resultados, abrir menus de celular, enviar formulários e criar joguinhos. É o cérebro das páginas da web.</p>
+                            <div class="step-reco">
+                                <strong>Melhor curso em português:</strong>
+                                <a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1" target="_blank" class="reco-link">
+                                    📺 Curso de JavaScript (Vídeo - Guanabara) ↗
+                                </a>
+                            </div>
+                            <button class="btn btn-small btn-complete" onclick="event.stopPropagation(); toggleStep(4)">Marcar como Lido</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="roadmap-step" data-step="5">
+                    <div class="step-marker-container">
+                        <button class="step-check" aria-label="Marcar passo 5 como concluído" onclick="toggleStep(5)"></button>
+                        <div class="step-number">5</div>
+                    </div>
+                    <div class="card step-card" onclick="expandStep(5)">
+                        <div class="step-card-header">
+                            <span class="step-tag">Especial</span>
+                            <h3>Onde ir a partir daqui?</h3>
+                            <span class="expand-arrow">▼</span>
+                        </div>
+                        <div class="step-card-content">
+                            <p>Parabéns por chegar até aqui! Agora você já sabe o básico. O segredo é praticar criando pequenos projetos (como o seu próprio site de apresentação) e participar de comunidades focadas em iniciantes para tirar dúvidas.</p>
+                            <div class="step-reco">
+                                <strong>Comunidade e Prática:</strong>
+                                <a href="https://discord.gg/rocketseat" target="_blank" class="reco-link">
+                                    💬 Discord da Rocketseat (Fórum Grátis) ↗
+                                </a>
+                            </div>
+                            <button class="btn btn-small btn-complete" onclick="event.stopPropagation(); toggleStep(5)">Marcar como Lido</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Code Playground -->
+        <section id="playground" class="section-container bg-grullo-light">
+            <div class="section-header">
+                <div class="sticker sticker-code animate-wiggle">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="60" height="60" rx="30" fill="#6C5234" stroke="#4E351E" stroke-width="3"/>
+                        <path d="M18 24L12 30L18 36M42 24L48 30L42 36M34 18L26 42" stroke="#F7F6E3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h2 class="section-title">Pratique sem instalar nada!</h2>
+                <p class="section-subtitle">Escreva seu primeiro código HTML abaixo e veja a mágica acontecer na hora no painel à direita.</p>
+            </div>
+
+            <!-- Playground widget -->
+            <div class="playground-widget card">
+                <div class="playground-tabs">
+                    <button class="tab-btn active" onclick="loadPlaygroundTemplate('button')">Criar um Botão</button>
+                    <button class="tab-btn" onclick="loadPlaygroundTemplate('text')">Alterar Texto</button>
+                    <button class="tab-btn" onclick="loadPlaygroundTemplate('emoji')">Efeito Especial</button>
+                </div>
+
+                <div class="playground-editor-area">
+                    <div class="editor-header">
+                        <span>📝 Código HTML/CSS</span>
+                        <span class="mobile-only-hint">Toque e edite</span>
+                    </div>
+                    <textarea id="playground-code" class="code-editor" aria-label="Editor de código para testes" oninput="updatePlaygroundPreview()"><button style="background-color: #546745; color: #F7F6E3; padding: 12px 24px; border: 3px solid #4E351E; border-radius: 12px; font-family: sans-serif; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 3px 3px 0px #4E351E;">
+   Clique em Mim!
+</button>
+
+<p style="color: #4E351E; font-family: sans-serif; margin-top: 15px;">
+   Você pode mudar esse texto ou a cor do botão acima!
+</p></textarea>
+                </div>
+
+                <div class="playground-preview-area">
+                    <div class="preview-header">
+                        <span>👀 Resultado na Tela</span>
+                    </div>
+                    <div class="preview-window" id="playground-preview">
+                        <!-- Preview output goes here -->
+                    </div>
+                </div>
+                
+                <div class="playground-footer-tips">
+                    💡 <strong>Dica rápida:</strong> Experimente mudar a palavra <code>#546745</code> para <code>tomato</code> ou <code>gold</code> e veja o botão mudar de cor!
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommended Creators Spotlight -->
+        <section id="professores" class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Quem ensina de verdade?</h2>
+                <p class="section-subtitle">Profissionais que criam os melhores materiais grátis e didáticos da internet brasileira.</p>
+            </div>
+
+            <div class="creators-grid">
+                <!-- Creator 1 -->
+                <div class="card creator-card">
+                    <div class="creator-avatar" style="background-color: #546745; color: #F7F6E3;">
+                        <span>GG</span>
+                    </div>
+                    <h3 class="creator-name">Gustavo Guanabara</h3>
+                    <span class="creator-badge">Curso em Vídeo</span>
+                    <p class="creator-bio">Referência nacional em ensino básico de tecnologia. Tem uma didática incomparável e todos os seus cursos de programação (HTML, CSS, JS, Python) são 100% gratuitos.</p>
+                    <a href="https://www.youtube.com/@CursoEmVideo" target="_blank" class="btn btn-outline btn-full">Canal do Guanabara ↗</a>
+                </div>
+
+                <!-- Creator 2 -->
+                <div class="card creator-card">
+                    <div class="creator-avatar" style="background-color: #6C5234; color: #F7F6E3;">
+                        <span>RB</span>
+                    </div>
+                    <h3 class="creator-name">Rafaella Ballerini</h3>
+                    <span class="creator-badge">Conteúdo Geral & HTML/CSS</span>
+                    <p class="creator-bio">Cria tutoriais excelentes sobre desenvolvimento web, além de vídeos focados em tirar o medo de quem está começando a dar os primeiros passos na carreira tecnológica.</p>
+                    <a href="https://www.youtube.com/@rafaellaballerini" target="_blank" class="btn btn-outline btn-full">Canal da Rafa ↗</a>
+                </div>
+
+                <!-- Creator 3 -->
+                <div class="card creator-card">
+                    <div class="creator-avatar" style="background-color: #4E351E; color: #F7F6E3;">
+                        <span>MS</span>
+                    </div>
+                    <h3 class="creator-name">DevSoutinho (Mário)</h3>
+                    <span class="creator-badge">Dicas de JavaScript & Web</span>
+                    <p class="creator-bio">Engenheiro de software focado em simplificar a web. Seus vídeos ajudam a entender como o JavaScript funciona sob o capô, com exemplos muito visuais e práticos.</p>
+                    <a href="https://www.youtube.com/@DevSoutinho" target="_blank" class="btn btn-outline btn-full">Canal do Soutinho ↗</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Course Directory with mobile-friendly filters -->
+        <section id="cursos" class="section-container bg-paper-texture">
+            <div class="section-header">
+                <h2 class="section-title">Indicações de Cursos Grátis</h2>
+                <p class="section-subtitle">Filtrados de acordo com a sua realidade e o que você precisa no momento.</p>
+            </div>
+
+            <!-- Filters (custom tags with neo-brutalism look) -->
+            <div class="filter-wrapper">
+                <div class="filter-title">Filtrar por:</div>
+                <div class="filter-buttons" role="group" aria-label="Filtro de cursos">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="celular">📱 Roda no Celular</button>
+                    <button class="filter-btn" data-filter="zero">🐣 Do Zero</button>
+                    <button class="filter-btn" data-filter="video">🎥 Vídeo-aulas</button>
+                    <button class="filter-btn" data-filter="texto">📖 Apostila/Texto</button>
+                </div>
+            </div>
+
+            <!-- Course list grid -->
+            <div class="courses-grid" id="courses-container">
+                <!-- Course Item 1 -->
+                <div class="card course-card" data-tags="celular zero video">
+                    <div class="course-meta">
+                        <span class="badge badge-green">Curso Completo</span>
+                        <span class="badge badge-brown">📱 Celular OK</span>
+                    </div>
+                    <h3 class="course-title">HTML5 e CSS3 - Módulo 1</h3>
+                    <p class="course-author">Por Gustavo Guanabara</p>
+                    <p class="course-desc">Aprenda a criar seus primeiros sites de forma profissional. Um curso super completo e didático.</p>
+                    <div class="course-footer">
+                        <span class="course-duration">⏱️ 40 horas</span>
+                        <a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n" target="_blank" class="course-link">Assistir Grátis ↗</a>
+                    </div>
+                </div>
+
+                <!-- Course Item 2 -->
+                <div class="card course-card" data-tags="zero video">
+                    <div class="course-meta">
+                        <span class="badge badge-green">Lógica</span>
+                        <span class="badge badge-tan">🐣 Do Zero</span>
+                    </div>
+                    <h3 class="course-title">Curso de Algoritmos</h3>
+                    <p class="course-author">Por Gustavo Guanabara</p>
+                    <p class="course-desc">Aprenda as regras fundamentais e lógica de programação de forma super visual e explicativa com o Scratch e Portugol.</p>
+                    <div class="course-footer">
+                        <span class="course-duration">⏱️ 15 horas</span>
+                        <a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dmSj0MxRwH91eJvjV2T9Q3-" target="_blank" class="course-link">Assistir Grátis ↗</a>
+                    </div>
+                </div>
+
+                <!-- Course Item 3 -->
+                <div class="card course-card" data-tags="celular zero texto">
+                    <div class="course-meta">
+                        <span class="badge badge-brown">📱 Celular OK</span>
+                        <span class="badge badge-tan">📖 Texto</span>
+                    </div>
+                    <h3 class="course-title">Guia Inicial de HTML e CSS</h3>
+                    <p class="course-author">MDN Web Docs</p>
+                    <p class="course-desc">A documentação oficial da Mozilla em português. Muito leve de carregar, ótima para ler no ônibus ou no metrô.</p>
+                    <div class="course-footer">
+                        <span class="course-duration">⏱️ Leitura livre</span>
+                        <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web" target="_blank" class="course-link">Ler Grátis ↗</a>
+                    </div>
+                </div>
+
+                <!-- Course Item 4 -->
+                <div class="card course-card" data-tags="celular video">
+                    <div class="course-meta">
+                        <span class="badge badge-green">JavaScript</span>
+                        <span class="badge badge-brown">📱 Celular OK</span>
+                    </div>
+                    <h3 class="course-title">JavaScript para Iniciantes</h3>
+                    <p class="course-author">Por Rafaella Ballerini</p>
+                    <p class="course-desc">Vídeo prático e bem ilustrado mostrando o que é o JavaScript, como ele se conecta ao HTML/CSS e onde ele roda.</p>
+                    <div class="course-footer">
+                        <span class="course-duration">⏱️ 10 horas</span>
+                        <a href="https://www.youtube.com/playlist?list=PLhkO7OMKgT_rRK3qvJsZAy3jrkupOxD_h" target="_blank" class="course-link">Assistir Grátis ↗</a>
+                    </div>
+                </div>
+
+                <!-- Course Item 5 -->
+                <div class="card course-card" data-tags="zero video">
+                    <div class="course-meta">
+                        <span class="badge badge-green">Lógica e JS</span>
+                        <span class="badge badge-tan">🐣 Do Zero</span>
+                    </div>
+                    <h3 class="course-title">Trilha Gratuita Discover</h3>
+                    <p class="course-author">Rocketseat</p>
+                    <p class="course-desc">Aulas e desafios práticos de desenvolvimento web desde o básico de lógica, cobrindo ferramentas e linguagens do dia a dia.</p>
+                    <div class="course-footer">
+                        <span class="course-duration">⏱️ 50 horas</span>
+                        <a href="https://www.rocketseat.com.br/discover" target="_blank" class="course-link">Acessar Grátis ↗</a>
+                    </div>
+                </div>
+
+                <!-- Course Item 6 -->
+                <div class="card course-card" data-tags="celular zero texto">
+                    <div class="course-meta">
+                        <span class="badge badge-brown">📱 Celular OK</span>
+                        <span class="badge badge-tan">📖 Texto</span>
+                    </div>
+                    <h3 class="course-title">Introdução a Algoritmos</h3>
+                    <p class="course-author">Khan Academy</p>
+                    <p class="course-desc">Aulas interativas e textos com gráficos dinâmicos explicando o que são algoritmos e como funcionam as buscas computacionais.</p>
+                    <div class="course-footer">
+                        <span class="course-duration">⏱️ Leitura livre</span>
+                        <a href="https://pt.khanacademy.org/computing/computer-science/algorithms" target="_blank" class="course-link">Estudar Grátis ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- No Computer? Tips Section -->
+        <section class="section-container bg-coffee-dark text-cream">
+            <div class="card dark-info-card">
+                <div class="dark-card-badge">Guia Prático</div>
+                <h2 class="dark-card-title">Estudar sem computador? <br>Sim, é totalmente possível!</h2>
+                <p class="dark-card-desc">
+                    Muitos programadores começaram apenas lendo apostilas e praticando em celulares antigos. Não deixe a falta de equipamento te parar. Veja algumas formas de dar a volta por cima:
+                </p>
+                <div class="tips-grid">
+                    <div class="tip-item">
+                        <div class="tip-num">A</div>
+                        <div class="tip-content">
+                            <h4>Pratique no Papel</h4>
+                            <p>Escrever algoritmos e códigos em um caderno ajuda seu cérebro a memorizar a sintaxe sem as correções automáticas das ferramentas.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">B</div>
+                        <div class="tip-content">
+                            <h4>Use Apps Leves</h4>
+                            <p>Existem aplicativos incríveis na Play Store e App Store como o <strong>Treedit</strong> (para criar páginas HTML) e o <strong>Sololearn</strong> (que tem pequenas lições de código).</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <div class="tip-num">C</div>
+                        <div class="tip-content">
+                            <h4>Baixe os Vídeos no Wi-Fi</h4>
+                            <p>Se a sua internet móvel for limitada, use o Wi-Fi de praças públicas, bibliotecas ou de conhecidos para baixar os vídeos do YouTube offline e estudar depois.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">Dev.livre</span>
+                <p>Educação tecnológica aberta, acessível e popular para todos.</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dev.livre. Feito com amor. ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script File -->
+    <script src="app.js"></script>
+</body>
+</html>
